@@ -35,6 +35,7 @@ while True :
         else :
             result = num_1 / num_2
             print('Result : {}'.format(result))
+
     else :
         print('Error')
         

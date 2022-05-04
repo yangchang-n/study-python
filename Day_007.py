@@ -307,4 +307,3 @@ print(mt.ceil(4.5))
 from math import sin, cos, floor, pi
 
 print(sin(pi / 2))
-

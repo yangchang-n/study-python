@@ -4,41 +4,31 @@
 # In[ ]:
 
 
-def input_func() :
-    while True :
-        input_data = input('계산식을 입력하세요.(\'10 + 20\'의 형태로) > ').split()
-        if input_data[0]== 'q' :
-            return ([input_data[0]], None)
-        num_list = [int(data) for data in input_data if data.isdigit()]  # 10 + 20
-        if input_data[1] in '+-*/' :
-            return (num_list, input_data[1])
-
-def plus_func(a, b) :
-    return a + b
-def minus_func(a, b) :
-    return a - b
-def mul_func(a, b) :
-    return a * b
-def div_func(a, b) :
-    return a / b
-
-while True :
-    num_list, code = input_func()
-    if num_list[0] == 'q' or num_list[0] == 'ㅂ' :
+while True:
+    input_data = input("계산식 입력 : (10 + 20 의 형식) > ").split()
+    if input_data[0] == 'q' :
         print('종료합니다.')
         break
-    num1 = num_list[0]
-    num2 = num_list[1]
-    if code == '+' :
-        result = plus_func(num1, num2)
-    elif code == '-' :
-        result = minus_func(num1, num2)
-    elif code == '*' :
-        result = mul_func(num1, num2)
-    else :
-        result = div_func(num1, num2)
-
-    print('{} {} {} = {}'.format(num1, code, num2, result))
+    else:
+        if len(input_data) != 3 :
+            print('다시 입력하세요.')
+            continue
+        num_1 = int(input_data[0])
+        num_2 = int(input_data[2])
+        code = input_data[1]
+        if code in '+-*/':
+            if code == '+':
+                result = num_1 + num_2
+            elif code == '-':
+                result = num_1 - num_2
+            elif code == '*':
+                result = num_1 * num_2
+            else:
+                result = num_1 / num_2
+            print("{} {} {} = {}".format(num_1, code, num_2, result))
+        else:
+            print("다시 입력하세요.")
+            continue
 
 
 # In[ ]:
@@ -110,14 +100,14 @@ for keys, values in line_dict.items() :
     int_number_list.sort()
     mode_numbers = []
 
-    for i in int_number_list :
+    for i in range(100 + 1) :
         mode_numbers.append((i, int_number_list.count(i)))
         
-    a = sorted(dict(mode_numbers).items(), key = lambda n : n[1], reverse = True)
+    a = sorted(mode_numbers, key = lambda n : n[1], reverse = True)
     
-    print('#{} {}'.format(keys, list(dict(a).keys())[0]))
-    fp_2.write('#{} {}\n'.format(keys, list(dict(a).keys())[0]))
-    
+    print('#{} {}'.format(keys, a[0][0]))
+    fp_2.write('#{} {}\n'.format(keys, a[0][0]))
+
 fp.close()
 fp_2.close()
 

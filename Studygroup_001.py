@@ -5,7 +5,7 @@
 
 
 while True:
-    input_data = input("계산식 입력 : (10 + 20 의 형식) > ").split()
+    input_data = input('계산식을 입력하세요.(\'10 + 20\'의 형태로) > ').split()
     if input_data[0] == 'q' :
         print('종료합니다.')
         break
@@ -25,9 +25,9 @@ while True:
                 result = num_1 * num_2
             else:
                 result = num_1 / num_2
-            print("{} {} {} = {}".format(num_1, code, num_2, result))
+            print('{} {} {} = {}'.format(num_1, code, num_2, result))
         else:
-            print("다시 입력하세요.")
+            print('다시 입력하세요.')
             continue
 
 

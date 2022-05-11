@@ -199,7 +199,7 @@ ax1.set_xlabel('연도(년)', size = 12)
 ax1.set_ylabel('발전량(억kWh)', size = 12)
 ax2.set_ylabel('증감율(%)', size = 12)
 plt.title('북한 전력 발전량 (1990 ~ 2016)', size = 20)
-ax1. legend(loc = 'best')
+ax1.legend(loc = 'best')
 
 plt.show()
 

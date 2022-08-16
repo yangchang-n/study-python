@@ -299,7 +299,7 @@ def sub_page_2() :
     BG_COLOR = (0, 0, 0)
     MASK_COLOR = (1, 1, 1)
     
-    video_file = st.file_uploader('영상 파일을 업로드해주세요.', type=['mp4'])
+    video_file = st.file_uploader('영상 파일을 업로드해주세요.', type = ['mp4'])
     
     if video_file is not None :      
         
